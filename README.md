@@ -17,7 +17,7 @@ Add the following settings to your `setting.json` file in VsCode:
   "plantuml.render": "PlantUMLServer",
 ```
 
-> Note: You can change the host's port (port before the :) to whatever you'd like. Default for http is usually `80` or `8080` 
+> Note: You can change the host's port (port before the ":") to whatever you'd like. Default for http is usually `80` or `8080` 
 
 ### Useful Commands
 
