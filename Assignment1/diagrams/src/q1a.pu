@@ -1,3 +1,13 @@
-@startuml Question 1a: 
+@startchen Question 1a
 
-@enduml
+entity Person {
+}
+entity Location {
+}
+relationship Birthplace {
+}
+
+Person -N- Birthplace
+Birthplace -1- Location
+
+@endchen
