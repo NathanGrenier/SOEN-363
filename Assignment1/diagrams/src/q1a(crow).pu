@@ -1,0 +1,117 @@
+@startuml
+' hide circle
+
+skinparam linetype ortho
+
+!define PK <&key>
+!define FK <&link-intact>
+
+entity Museum {
+  PK MUS_ID: int
+  --
+}
+
+entity Departments {
+  PK DEP_ID: int
+  PK FK MUS_ID: int
+  --
+}
+
+entity Collections {
+    PK COLL_ID: int
+    PK FK DEP_ID: int
+    --
+    FK EXHI_ID: int
+}
+
+entity ArtObjects {
+    PK ARTOBJ_ACQUISITION_NUM: int
+    --
+    FK ARTOBJ_TYPE_ID: int
+    FK COLL_ID: int
+    FK ARTIST_ID: int
+    FK COUNTRY_ID: int
+    FK PER_ID: int
+    FK DIM_ID: int 
+    ARTOBJ_TITLE: string
+    ARTOBJ_DESC: string
+    ARTOBJ_PROD_DATE: Date
+}
+
+entity Dimensions {
+    PK DIM_ID: int
+    PK FK ARTOBJ_ID: int
+    --
+    DIM_LENGTH: float 
+    DIM_WIDTH: float
+    DIM_DEPTH: float
+}
+
+entity Countries {
+    PK COUNTRY_ID: int
+    --
+    COUNTRY_NAME: string
+}
+
+entity ArtObjectTypes {
+    PK ARTOBJ_TYPE_ID: int
+    --
+    ARTOBJ_TYPE_NAME: string
+}
+
+entity Artists {
+    PK ARTIST_ID: int
+    --
+    ARTIST_NAME: string
+}
+
+entity Periods {
+    PK PER_ID: int
+    --
+    PER_NAME: string
+    PER_START_DATE: Date
+    PER_END_DATE: Date
+}
+
+entity Exhibitions {
+    PK EXHI_ID: int
+    PK FK MUS_ID: int
+    --
+    FK DEP_HOME_ID: int
+    EXHI_START_DATE: Date
+    EXHI_END_DATE: Date
+}
+
+class Borrowed {
+    PK FK EXHI_ID: int
+    PK FK ARTOBJ_ACQUISITION_NUM: int
+    --
+    B_DATE: Date
+    B_RETURN_DATE: Date
+}
+
+Museum ||--|{ Departments: has
+Museum ||--o{ Exhibitions: hosts
+
+Departments ||--|| Collections: contains
+
+Collections ||..|{ ArtObjects: made up of
+
+ArtObjects }|..o| Artists: createdBy
+ArtObjects }|..|| Periods: from
+ArtObjects ||-right-|| Dimensions: defined by
+ArtObjects }|.left.o| Countries: produced in
+ArtObjects }|..|| ArtObjectTypes: of type
+
+'  To space the entity boxes 
+hide hidden1
+hide hidden2
+hidden1 ||-right-|| Dimensions
+hidden2 ||-left-|| Countries
+
+Exhibitions ||..|| Departments
+Exhibitions |o..|{ Collections: exhibits
+
+Borrowed }o--|| Exhibitions
+Borrowed }o--|| ArtObjects
+@enduml

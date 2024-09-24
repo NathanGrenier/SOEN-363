@@ -13,6 +13,10 @@
 \usepackage{zed-csp}
 \usepackage[cc]{titlepic}
 
+\usepackage{minted}
+\usepackage[svgnames]{xcolor}
+
+
 \title{SOEN 363: Data Systems for Software Engineers\\
 \ \\
 Assignment 1}
@@ -45,11 +49,15 @@ Assignment 1}
                               %       \includegraphics[width=0.6\textwidth]{img/q2/q2_automata.png}
                               % \end{figure}
 
+                              \newpage
+
                         \item[B)] [10 pts] Provide a DDL script for the above.
 
+                              \inputminted[bgcolor=Beige, frame=lines, fontsize=\small, linenos, breaklines]{sql}{q1/db.sql}
+
+                              \newpage
 
                         \item[C)] [10 pts] Provide a database instance that demonstrate an exhibition with local (from home department) and borrowed art objects.
-
 
                   \end{enumerate}
 
@@ -72,6 +80,7 @@ Assignment 1}
                               %       \centering
                               %       \includegraphics[width=0.6\textwidth]{img/q2/q2_automata.png}
                               % \end{figure}
+
 
                         \item[B)] [6 pts] Provide the schema and explicitly identify the domains of each attribute.
 

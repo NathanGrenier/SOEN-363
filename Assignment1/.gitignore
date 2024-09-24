@@ -2,3 +2,6 @@
 *.aux
 *.log
 *.synctex.gz
+
+# Minted (latex package) output
+_minted-*
