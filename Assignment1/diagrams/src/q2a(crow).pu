@@ -1,0 +1,75 @@
+@startuml
+
+skinparam linetype ortho
+
+!define PK <&key>
+!define FK <&link-intact>
+
+entity Lesson {
+    PK LS_ID: int
+    --
+    FK LOC_ID: int
+    FK LSCH_ID: int
+}
+
+entity Private {}
+
+entity Group {}
+
+entity Activity {}
+
+entity Locations {
+    PK FK LOC_CITY: int
+    PK FK LOC_PROVINCE: int
+    -- 
+}
+
+entity City {
+    PK C_ID: int
+}
+
+entity Province {
+    PK P_ID: int
+}
+
+entity LessonSpace {
+    PK FK LS_ID: int
+    --
+    FK LOC_ID: int
+    LS_OWNED: boolean
+}
+
+entity LessonSchedule {
+    PK LSCH_ID: int
+    --
+    LSCH_START: Date
+    LSCH_END: Date
+}
+
+entity Clients {}
+
+entity Instructor {}
+
+entity Specialization {}
+
+entity Availability {
+    PK FK I_ID: int
+    PK FK C_ID: int
+}
+
+entity LessonOfferings {}
+
+Lesson <|-- Private
+Lesson <|-- Group
+
+Lesson }|..|| LessonSpace
+Lesson .. LessonSchedule
+Lesson .. Activity
+
+LessonSpace .. Locations
+
+Locations .. City
+Locations .. Province
+
+
+@enduml
