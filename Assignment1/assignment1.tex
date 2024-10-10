@@ -44,10 +44,12 @@ Assignment 1}
 
                         \item[A)] [20 pts] Design a data model that implements the above description. Identify the entities, relations, attributes, keys, and their cardinalities. Identify strong and weak entities and relations, if applicable. Represent the end result in the form of an ERD diagram. single arrow - no arrow notation for cardinalities and single line - double line for partial and total participation [??].
 
-                              % \begin{figure}[h!]
-                              %       \centering
-                              %       \includegraphics[width=0.6\textwidth]{img/q2/q2_automata.png}
-                              % \end{figure}
+                              \textbf{Note: The software I used couldn't do dashed underlined text. Therefore, bold + underline + italics represents a partial key.}
+
+                              \begin{figure}[h!]
+                                    \centering
+                                    \includegraphics[width=1\textwidth]{q1/q1(chen).png}
+                              \end{figure}
 
                               \newpage
 
@@ -58,6 +60,8 @@ Assignment 1}
                               \newpage
 
                         \item[C)] [10 pts] Provide a database instance that demonstrate an exhibition with local (from home department) and borrowed art objects.
+
+                              \inputminted[bgcolor=Beige, frame=lines, fontsize=\small, linenos, breaklines]{sql}{q1/seed.sql}
 
                   \end{enumerate}
 
@@ -76,15 +80,22 @@ Assignment 1}
                   \begin{enumerate}
                         \item[A)] [25 pts] Design a data model that captures the above description. Identify the entities, relations, attributes, keys, and their cardinalities. Identify strong and weak entities and relations, if applicable. Represent the end result in the form of an ERD diagram, using chen notation [??].
 
-                              % \begin{figure}[h!]
-                              %       \centering
-                              %       \includegraphics[width=0.6\textwidth]{img/q2/q2_automata.png}
-                              % \end{figure}
+                              \begin{figure}[h!]
+                                    \centering
+                                    \includegraphics[width=0.9\textwidth]{diagrams/out/q2a(crow)/q2(crow).png}
+                              \end{figure}
 
+                              \newpage
 
                         \item[B)] [6 pts] Provide the schema and explicitly identify the domains of each attribute.
 
+                              \inputminted[bgcolor=Beige, frame=lines, fontsize=\small, linenos, breaklines]{sql}{q2/db.sql}
+
+                              \newpage
+
                         \item[C)] [9 pts] Provide a database instance that demonstrate offers to a sample instructor, one of which is accepted, one is rejected, and one is pending response. Demonstrate a group and a private lesson in your example.
+
+                              \inputminted[bgcolor=Beige, frame=lines, fontsize=\small, linenos, breaklines]{sql}{q2/seed.sql}
 
                   \end{enumerate}
 
@@ -92,10 +103,12 @@ Assignment 1}
 
             \item[Q3.] [20 Points] Represent the ERD of either questions in crow's foot notation using PlantUml [??], [??]. Make sure you submit both PlantUML source and the diagram image.
 
-                  % \begin{figure}[h!]
-                  %       \centering
-                  %       \includegraphics[width=0.6\textwidth]{img/q2/q2_automata.png}
-                  % \end{figure}
+                  \textbf{Question 1 ERD (Crow's Foot Notation):}
+
+                  \begin{figure}[h!]
+                        \centering
+                        \includegraphics[width=1\textwidth]{diagrams/out/q1a(crow).png}
+                  \end{figure}
 
       \end{enumerate}
 

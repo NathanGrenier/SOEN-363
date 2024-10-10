@@ -1,4 +1,4 @@
-@startuml
+@startuml q2(crow)
 
 skinparam linetype ortho
 
@@ -16,12 +16,9 @@ entity Private {}
 
 entity Group {}
 
-entity Activity {}
-
 entity Locations {
     PK FK LOC_CITY: int
     PK FK LOC_PROVINCE: int
-    -- 
 }
 
 entity City {
@@ -42,34 +39,75 @@ entity LessonSpace {
 entity LessonSchedule {
     PK LSCH_ID: int
     --
-    LSCH_START: Date
-    LSCH_END: Date
+    FK DTS_ID: int
 }
 
-entity Clients {}
+entity Instructor {
+    PK I_ID: int
+    --
+    I_NAME: string
+    I_PHONE: string
+}
 
-entity Instructor {}
+entity Specialization {
+    PK S_ID: int
+    --
+    S_NAME: string
+}
 
-entity Specialization {}
+entity Offering {
+    PK O_ID: int
+    PK FK I_ID: int
+    PK FK LS_ID: int
+}
 
 entity Availability {
     PK FK I_ID: int
     PK FK C_ID: int
+} 
+
+entity Client {
+    PK C_ID: int
+    --
+    C_NAME: string
+    C_PHONE: string
 }
 
-entity LessonOfferings {}
+entity Registered {
+    PK FK C_ID: int
+    PK FK O_ID: int
+}
 
-Lesson <|-- Private
-Lesson <|-- Group
+entity DayTimeSlots {
+    PK DTS_ID: int
+    PK FK LSCH_ID: int
+    --
+    DTS_START_DATE: DATE
+    DTS_END_DATE: DATE
+}
+
+Lesson <|- Private
+Lesson <|- Group
 
 Lesson }|..|| LessonSpace
-Lesson .. LessonSchedule
-Lesson .. Activity
+Lesson ||..|| LessonSchedule
 
-LessonSpace .. Locations
+LessonSchedule ||--o{ DayTimeSlots
 
-Locations .. City
-Locations .. Province
+LessonSpace }|..|| Locations
 
+Locations ||..|| City
+Locations ||..|| Province
+
+Instructor ||..|| Specialization
+Instructor ||..o{ Availability
+Instructor }|..o| Offering
+
+Availability ||..|| City
+
+Offering }o..|| Lesson
+
+Registered ||..|{ Offering
+Registered ||..o{ Client
 
 @enduml
