@@ -5,3 +5,6 @@
 
 # Minted (latex package) output
 _minted-*
+
+# Environment Varaibles
+.env

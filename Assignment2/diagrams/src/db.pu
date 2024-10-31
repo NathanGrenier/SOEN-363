@@ -1,0 +1,111 @@
+@startuml ERD for Database
+' hide circle
+
+skinparam linetype ortho
+
+!define PK <&key>
+!define FK <&link-intact>
+
+entity Movie {
+    PK M_ID: int
+    --
+    M_WATCHMODE_ID: int
+    M_IMDB: string
+    M_TMDB: int
+    M_TITLE: string
+    M_VIEWER_RATING: float (1 decimal) (0..10)
+    M_RELEASE_YEAR: int
+    FK M_CONTENT_RATING_ID: int
+}
+
+entity ContentRating {
+    PK CR_ID: int
+    --
+    CR_RATING: string
+}
+
+entity GenresTypes {
+    PK GT_ID: int
+    --
+    GT_NAME: string
+}
+
+entity Genres {
+    PK FK M_ID: int
+    PK FK GT_ID: int
+}
+
+entity Actors {
+    PK A_ID: int
+    --
+    A_NAME: string
+}
+
+entity MovieActors {
+    PK FK M_ID: int
+    PK FK A_ID: int
+}
+
+entity Directors {
+    PK D_ID: int
+    --
+    D_NAME: string
+}
+
+entity MovieDirectors {
+    PK FK M_ID: int
+    PK FK D_ID: int
+}
+
+entity Countries {
+    PK C_ID: int
+    --
+    C_NAME: string
+    C_CODE: CHAR(2)
+}
+
+entity MovieCountries {
+    PK FK M_ID: int
+    PK FK C_ID: int
+}
+
+entity Languages {
+    PK L_ID: int
+    --
+    L_NAME: string
+    L_CODE: CHAR(2)
+}
+
+entity MovieLanguages {
+    PK FK M_ID: int
+    PK FK L_ID: int
+}
+
+entity Keywords {
+    PK FK M_ID: int
+    PK FK K_ID: int
+}
+
+entity AKA {
+    PK AKA_ID: int
+    --
+    FK M_ID: int
+    AKA_NAME: string
+    AKA_CODE: string
+}
+
+Movie ||-up-|| ContentRating: has
+Movie ||-up-|{ Keywords: has
+Movie ||-up-|| AKA: has
+Movie ||-left-|{ Genres: has
+Movie ||--|{ Actors: has
+Movie ||--|{ Directors: has
+Movie ||--|{ Countries: has
+Movie ||-right-|{ Languages: has
+
+Genres }|-left-|| GenresTypes
+Actors }|-left-|| MovieActors
+Directors }|--|| MovieDirectors
+Countries }|--|| MovieCountries
+Languages }|-right-|| MovieLanguages
+@enduml

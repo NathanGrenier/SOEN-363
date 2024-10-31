@@ -1,0 +1,39 @@
+DB Requirements:
+- TMDB-ids
+- IMDB-ids
+- Unique Primary Key (Different than TMDB, IMDB ids)
+- Movies
+  - Watchmode ID
+  - Title
+  - Plot
+  - Content Rating (certificates)
+    - G (General Audiences)
+    - PG (Parental Guidance Suggested)
+    - PG-13 (Parents Strongly Cautioned)
+    - R (Restricted)
+    - NC-17 (Adults Only)
+  - Viewer Rating (float from 0..10 with 1 decimal of accuracy)
+  - Genres
+  - Actors
+  - Directors
+  - Release Year
+  - AKA (Also Known As)
+    - Alternate Name
+    - Language
+  - Countries
+    - Name
+    - Country Code
+  - Languages
+  - Keywords
+
+DB Tables:
+- Movies
+- Content_Rating
+- Genres
+- Genre Types
+- Actors
+- Directors
+- Countries
+- Languages
+- Keywords
+- AKA

@@ -1,4 +1,0 @@
-pandas
-ruff
-python-dotenv
-requests
