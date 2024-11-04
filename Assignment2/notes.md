@@ -37,3 +37,13 @@ DB Tables:
 - Languages
 - Keywords
 - AKA
+
+Cascades: When a Movie is Deleted:
+- It's keywords should be deleted
+- It's AKAs should be deleted
+- It's Reviews should be deleted
+- It's MovieLanguages should be deleted
+- It's MovieDirectors should be deleted
+- It's MovieCountries should be deleted
+- It's MovieActors should be deleted
+- It's MovieGenres should be deleted

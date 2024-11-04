@@ -13,9 +13,11 @@ entity Movie {
     M_IMDB: string
     M_TMDB: int
     M_TITLE: string
+    M_PLOT: string
+    M_RUNTIME: int
     M_VIEWER_RATING: float (1 decimal) (0..10)
     M_RELEASE_YEAR: int
-    FK M_CONTENT_RATING_ID: int
+    FK CR_ID: int
 }
 
 entity ContentRating {
@@ -30,7 +32,7 @@ entity GenresTypes {
     GT_NAME: string
 }
 
-entity Genres {
+entity MovieGenres {
     PK FK M_ID: int
     PK FK GT_ID: int
 }
@@ -82,8 +84,10 @@ entity MovieLanguages {
 }
 
 entity Keywords {
-    PK FK M_ID: int
-    PK FK K_ID: int
+    PK K_ID: int
+    --
+    FK M_ID: int
+    K_KEYWORD: string
 }
 
 entity AKA {
@@ -91,21 +95,33 @@ entity AKA {
     --
     FK M_ID: int
     AKA_NAME: string
-    AKA_CODE: string
 }
+
+entity Review {
+    PK R_ID: int
+    --
+    FK M_ID: int
+    R_AUTHOR: string
+    R_NAME: string
+    R_RATING: int
+    R_REVIEW: string
+    R_DATE: date
+}
+
 
 Movie ||-up-|| ContentRating: has
 Movie ||-up-|{ Keywords: has
 Movie ||-up-|| AKA: has
-Movie ||-left-|{ Genres: has
-Movie ||--|{ Actors: has
-Movie ||--|{ Directors: has
-Movie ||--|{ Countries: has
-Movie ||-right-|{ Languages: has
+Movie ||-left-|{ MovieGenres: has
+Movie ||--|{ MovieActors: has
+Movie ||--|{ MovieDirectors: has
+Movie ||-down-|{ MovieCountries: has
+Movie ||-right-|{ MovieLanguages: has
+Movie ||--|{ Review: has
 
-Genres }|-left-|| GenresTypes
-Actors }|-left-|| MovieActors
-Directors }|--|| MovieDirectors
-Countries }|--|| MovieCountries
-Languages }|-right-|| MovieLanguages
+MovieGenres }|-left-|| GenresTypes
+Actors }|-|| MovieActors
+Directors ||-up-|{ MovieDirectors
+Countries ||-up-|{ MovieCountries
+Languages ||--|{ MovieLanguages
 @enduml
