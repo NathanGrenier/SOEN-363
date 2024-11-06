@@ -1,10 +1,2 @@
-# Tex compile outputs
-*.aux
-*.log
-*.synctex.gz
-
-# Minted (latex package) output
-_minted-*
-
 # Environment Varaibles
 .env
