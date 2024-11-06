@@ -8,6 +8,17 @@ In order to run the code, you need to define the following environment files in 
 
 > A WATCHMODE_API_KEY can be generate [here](https://api.watchmode.com/).
 
+# Starting the Docker Container
+
+> **Note:** You will need [docker](https://docs.docker.com/engine/install/) install on your system in order to run the following commands.
+
+A database for development purposes along with a pgadmin instace can be started with docker compose by using the following command:
+```sh
+docker compose up
+```
+
+Login credentials for both the postgres database and pgadmin instance can be found in the `docker-compose.yaml` file.
+
 # Python Venv
 
 First, install virtualvenv using `pip install virtualenv`.
