@@ -19,7 +19,7 @@ WATCHMODE_API_KEY = os.getenv("WATCHMODE_API_KEY")
 API_KEY_URL_PARAM = f"?apiKey={WATCHMODE_API_KEY}"
 WATCHMODE_API_URL = "https://api.watchmode.com/v1"
 
-FREE_MOVIE_DB_URL = "https://imdb.iamidiotareyoutoo.com"
+FREE_MOVIE_API_URL = "https://imdb.iamidiotareyoutoo.com"
 
 DUMP_DATA_PATH = "./data"
 
@@ -70,7 +70,7 @@ def getMovieList(count = 250, DEBUG=False):
     
     url = f"{WATCHMODE_API_URL}/list-titles/{API_KEY_URL_PARAM}"
     params = {
-        "types": "movie",
+        "typeshttps://docs.docker.com/engine/install/": "movie",
         "release_date_start": 19900101,
         "release_date_end": 20220101,
         "limit": count,
@@ -98,7 +98,7 @@ def getMovieDetails(IMDB_ID, DEBUG=False):
             print(f"Data already exists at {dumpPath}")
         return dumpPath
     
-    url = f"{FREE_MOVIE_DB_URL}/search/"
+    url = f"{FREE_MOVIE_API_URL}/search/"
     params = {
         "tt": IMDB_ID
     }
