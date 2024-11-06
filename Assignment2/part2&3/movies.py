@@ -324,7 +324,7 @@ def insertMovie(movieData, conn):
     cursor.close()
 
 if __name__ == "__main__":
-    DEBUG = False
+    DEBUG = True
     
     dumpPath = getMovieList(200, DEBUG=DEBUG)
     watchmodeData = loadJSON(dumpPath)
