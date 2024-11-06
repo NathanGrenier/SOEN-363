@@ -17,6 +17,7 @@ entity Movie {
     M_RUNTIME: int
     M_VIEWER_RATING: float (1 decimal) (0..10)
     M_RELEASE_YEAR: int
+    M_REVIEW_COUNT: int
     FK CR_ID: int
 }
 
@@ -26,64 +27,64 @@ entity ContentRating {
     CR_RATING: string
 }
 
-entity GenresTypes {
+entity GenresType {
     PK GT_ID: int
     --
-    GT_NAME: string
+    GT_TYPE: string
 }
 
-entity MovieGenres {
+entity MovieGenre {
     PK FK M_ID: int
     PK FK GT_ID: int
 }
 
-entity Actors {
+entity Actor {
     PK A_ID: int
     --
     A_NAME: string
 }
 
-entity MovieActors {
+entity MovieActor {
     PK FK M_ID: int
     PK FK A_ID: int
 }
 
-entity Directors {
+entity Director {
     PK D_ID: int
     --
     D_NAME: string
 }
 
-entity MovieDirectors {
+entity MovieDirector {
     PK FK M_ID: int
     PK FK D_ID: int
 }
 
-entity Countries {
+entity Country {
     PK C_ID: int
     --
     C_NAME: string
     C_CODE: CHAR(2)
 }
 
-entity MovieCountries {
+entity MovieCountry {
     PK FK M_ID: int
     PK FK C_ID: int
 }
 
-entity Languages {
+entity Language {
     PK L_ID: int
     --
     L_NAME: string
     L_CODE: CHAR(2)
 }
 
-entity MovieLanguages {
+entity MovieLanguage {
     PK FK M_ID: int
     PK FK L_ID: int
 }
 
-entity Keywords {
+entity Keyword {
     PK K_ID: int
     --
     FK M_ID: int
@@ -94,34 +95,22 @@ entity AKA {
     PK AKA_ID: int
     --
     FK M_ID: int
-    AKA_NAME: string
-}
-
-entity Review {
-    PK R_ID: int
-    --
-    FK M_ID: int
-    R_AUTHOR: string
-    R_NAME: string
-    R_RATING: int
-    R_REVIEW: string
-    R_DATE: date
+    AKA_TITLE: string
 }
 
 
 Movie ||-up-|| ContentRating: has
-Movie ||-up-|{ Keywords: has
+Movie ||-up-|{ Keyword: has
 Movie ||-up-|| AKA: has
-Movie ||-left-|{ MovieGenres: has
-Movie ||--|{ MovieActors: has
-Movie ||--|{ MovieDirectors: has
-Movie ||-down-|{ MovieCountries: has
-Movie ||-right-|{ MovieLanguages: has
-Movie ||--|{ Review: has
+Movie ||-left-|{ MovieGenre: has
+Movie ||--|{ MovieActor: has
+Movie ||--|{ MovieDirector: has
+Movie ||-down-|{ MovieCountry: has
+Movie ||-right-|{ MovieLanguage: has
 
-MovieGenres }|-left-|| GenresTypes
-Actors }|-|| MovieActors
-Directors ||-up-|{ MovieDirectors
-Countries ||-up-|{ MovieCountries
-Languages ||--|{ MovieLanguages
+MovieGenre }|-left-|| GenresType
+Actor }|-|| MovieActor
+Director ||-up-|{ MovieDirector
+Country ||-up-|{ MovieCountry
+Language ||--|{ MovieLanguage
 @enduml

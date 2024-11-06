@@ -1,8 +1,12 @@
 # Environment Variables
 
+In order to run the code, you need to define the following environment files in a `.env` file in the root of the `part2&3` folder.
+
 | Key               | Value |
 | ----------------- | ----- |
 | WATCHMODE_API_KEY |       |
+
+> A WATCHMODE_API_KEY can be generate [here](https://api.watchmode.com/).
 
 # Python Venv
 
