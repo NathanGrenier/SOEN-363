@@ -13,9 +13,9 @@ B) Pick an actor. Find all movies by that actor that is released between 2000 an
 
 C) Find movies that have highest number of reviews. List the top 3.
 
-D) Find number of movies that are in more than one language.
+D) Find the number of movies that are in more than one language.
 
-E) For each language list how many movies are there in the database. Order by highest rank.
+E) For each language, list how many movies are in that language. Order by highest rank.
 
 F) Find top 2 comedies (higher ratings).
 
