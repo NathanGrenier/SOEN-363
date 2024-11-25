@@ -1,0 +1,56 @@
+l_id,l_name,l_code
+1,Spanish,es
+2,English,en
+3,Mandarin,cmn
+4,French,fr
+5,Arabic,ar
+6,German,de
+7,Latin,la
+8,Icelandic,is
+9,Japanese,ja
+10,Russian,ru
+11,Norwegian,no
+12,Hungarian,hu
+13,Macedonian,mk
+14,Finnish,fi
+15,Cantonese,yue
+16,American Sign Language,ase
+17,Marathi,mr
+18,Assyrian Neo-Aramaic,aii
+19,Sumerian,sux
+20,Sanskrit,sa
+21,"Greek, Ancient (to 1453)",grc
+22,Italian,it
+23,Indonesian,id
+24,Bable,ast
+25,Polish,pl
+26,Chinese,zh
+27,Tupi,tup
+28,Portuguese,pt
+29,Xhosa,xh
+30,Korean,ko
+31,Irish Gaelic,ga
+32,Dutch,nl
+33,Flemish,qbn
+34,North American Indian,nai
+35,Maori,mi
+36,Malay,ms
+37,Czech,cs
+38,Sign Languages,sgn
+39,Hebrew,he
+40,Swahili,sw
+41,British Sign Language,bfi
+42,Nama,qba
+43,Inuktitut,iu
+44,Swedish,sv
+45,Vietnamese,vi
+46,Persian,fa
+47,Hindi,hi
+48,Bengali,bn
+49,Nyanja,ny
+50,Turkish,tr
+51,Samoan,sm
+52,Thai,th
+53,Nepali,ne
+54,Egyptian (Ancient),egy
+55,Hokkien,qab

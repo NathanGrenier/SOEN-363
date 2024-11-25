@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DATA_PATH = "./data"
+DATA_DUMP_PATH = f"{DATA_PATH}/dump"
 
 POSTGRES_CONFIG = {
   "host": "localhost",
