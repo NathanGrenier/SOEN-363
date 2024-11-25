@@ -1,0 +1,10 @@
+.env
+venv/
+.ruff_cache/
+__pycache__/
+
+# Data Fetching
+data/fmdb/*_details.json
+
+# neo4j
+neo4j/*
