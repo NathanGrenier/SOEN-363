@@ -1,0 +1,66 @@
+﻿neo4j
+<svg xmlns="http://www.w3.org/2000/svg" width="309.3533630371094" height="202.58990478515625"
+    viewBox="-153.2771759033203 -71.20665740966797 309.3533630371094 202.58990478515625">
+    <title>Neo4j Graph Visualization</title>
+    <desc>Created using Neo4j (http://www.neo4j.com/)</desc>
+    <g class="layer relationships">
+        <g class="relationship"
+            transform="translate(-5.352072248688328 -42.20665663352469) rotate(444.1633526919305)">
+            <path class="b-outline" fill="#A5ABB6" stroke="none"
+                d="M 25 0.5 L 46.39044117816847 0.5 L 46.39044117816847 -0.5 L 25 -0.5 Z M 91.95294117816847 0.5 L 113.34338235633695 0.5 L 113.34338235633695 3.5 L 120.34338235633695 0 L 113.34338235633695 -3.5 L 113.34338235633695 -0.5 L 91.95294117816847 -0.5 Z" />
+            <text text-anchor="middle" pointer-events="none" font-size="8px" fill="#000000"
+                x="69.17169117816847" y="3"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif">ACTED_IN</text>
+        </g>
+        <g class="relationship"
+            transform="translate(9.428276851977044 102.3832464553246) rotate(201.29186316123156)">
+            <path class="b-outline" fill="#A5ABB6" stroke="none"
+                d="M 25 0.5 L 44.357613761208924 0.5 L 44.357613761208924 -0.5 L 25 -0.5 Z M 92.14277001120892 0.5 L 111.50038377241785 0.5 L 111.50038377241785 3.5 L 118.50038377241785 0 L 111.50038377241785 -3.5 L 111.50038377241785 -0.5 L 92.14277001120892 -0.5 Z" />
+            <text text-anchor="middle" pointer-events="none" font-size="8px" fill="#000000"
+                x="68.25019188620892" y="3" transform="rotate(180 68.25019188620892 0)"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif">FILMED_IN</text>
+        </g>
+        <g class="relationship"
+            transform="translate(9.428276851977044 102.3832464553246) rotate(324.8675059822337)">
+            <path class="b-outline" fill="#A5ABB6" stroke="none"
+                d="M 25 0.5 L 34.31025474530833 0.5 L 34.31025474530833 -0.5 L 25 -0.5 Z M 102.54462974530833 0.5 L 111.85488449061666 0.5 L 111.85488449061666 3.5 L 118.85488449061666 0 L 111.85488449061666 -3.5 L 111.85488449061666 -0.5 L 102.54462974530833 -0.5 Z" />
+            <text text-anchor="middle" pointer-events="none" font-size="8px" fill="#000000"
+                x="68.42744224530833" y="3"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif">HAS_KEYWORD</text>
+        </g>
+    </g>
+    <g class="layer nodes">
+        <g class="node" aria-label="graph-node-101"
+            transform="translate(9.428276851977044,102.3832464553246)">
+            <circle class="b-outline" cx="0" cy="0" r="25" fill="#8DCC93" stroke="#5db665"
+                stroke-width="2px" />
+            <text class="caption" text-anchor="middle" pointer-events="none" x="0" y="5"
+                font-size="10px" fill="#2A2C34"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"> Movie</text>
+        </g>
+        <g class="node" aria-label="graph-node-103"
+            transform="translate(127.07617975178425,19.599197659157397)">
+            <circle class="b-outline" cx="0" cy="0" r="25" fill="#ECB5C9" stroke="#da7298"
+                stroke-width="2px" />
+            <text class="caption" text-anchor="middle" pointer-events="none" x="0" y="5"
+                font-size="10px" fill="#2A2C34"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"> Keyword</text>
+        </g>
+        <g class="node" aria-label="graph-node-100"
+            transform="translate(-5.352072248688328,-42.20665663352469)">
+            <circle class="b-outline" cx="0" cy="0" r="25" fill="#F79767" stroke="#f36924"
+                stroke-width="2px" />
+            <text class="caption" text-anchor="middle" pointer-events="none" x="0" y="5"
+                font-size="10px" fill="#FFFFFF"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"> Actor</text>
+        </g>
+        <g class="node" aria-label="graph-node-102"
+            transform="translate(-124.27717326828524,50.27554308078252)">
+            <circle class="b-outline" cx="0" cy="0" r="25" fill="#4C8EDA" stroke="#2870c2"
+                stroke-width="2px" />
+            <text class="caption" text-anchor="middle" pointer-events="none" x="0" y="5"
+                font-size="10px" fill="#FFFFFF"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"> Country</text>
+        </g>
+    </g>
+</svg>

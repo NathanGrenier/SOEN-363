@@ -1,3 +1,14 @@
+# About
+
+## Data Models
+Below are the data model diagram of each database.
+
+### NoSQL Database (Neo4j)
+
+<div align="center">
+  <img src="diagrams/out/neo4j-data-model.png" alt="NoSQL Data Model" width="800">
+</div>
+
 # Environment Variables
 
 In order to run the code, you need to define the following environment files in a `.env` file.
